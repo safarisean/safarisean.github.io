@@ -1,1 +1,239 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Poems, picture books and curious little adventures by Sean Turner.">
+  <title>Books — Safari Sean Creative</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #fff6df;
+      color: #2d2929;
+      font-family: Arial, sans-serif;
+    }
+
+    a { color: inherit; }
+
+    header, main, footer {
+      max-width: 1050px;
+      margin: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    header {
+      padding-top: 28px;
+      padding-bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-decoration: none;
+    }
+
+    .home {
+      font-size: 14px;
+      text-underline-offset: 5px;
+    }
+
+    .opening { padding: 70px 0 55px; }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0;
+      font-size: clamp(60px, 12vw, 110px);
+      line-height: 1;
+      letter-spacing: -.065em;
+    }
+
+    .opening p, .description {
+      color: #665e57;
+      font-size: 19px;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 75px;
+      padding: 45px 0 95px;
+    }
+
+    .cover {
+      padding: 30px;
+      background: #f0e6ce;
+      border-radius: 48% 48% 8px 8px;
+    }
+
+    .cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+      box-shadow: 8px 14px 24px #2d29291c;
+      transform: rotate(-3deg);
+    }
+
+    h2 {
+      margin: 16px 0;
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: clamp(35px, 5vw, 53px);
+      line-height: 1.1;
+    }
+
+    .note {
+      display: inline-block;
+      margin-top: 15px;
+      padding-bottom: 7px;
+      border-bottom: 5px solid #c8db16;
+      font-size: 14px;
+    }
+
+    .more {
+      padding: 35px 0;
+      border-top: 1px solid #2d29292b;
+      display: grid;
+      grid-template-columns: 65px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .number {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border: 2px solid #2d2929;
+      border-radius: 50%;
+      background: #37c7c2;
+      font-family: Georgia, serif;
+      font-size: 22px;
+    }
+
+    .more:last-child .number { background: #ff8b73; }
+
+    .more h2 { font-size: 32px; margin-top: 3px; }
+    .more p { margin-bottom: 0; }
+
+    footer {
+      padding-top: 90px;
+      padding-bottom: 40px;
+      color: #665e57;
+      font-size: 13px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #2d2929;
+      outline-offset: 6px;
+    }
+
+    @media (max-width: 700px) {
+      .opening { padding-top: 40px; }
+
+      .featured {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 15px;
+        padding-bottom: 65px;
+      }
+
+      .cover {
+        max-width: 350px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .more { grid-template-columns: 45px 1fr; gap: 15px; }
+      header { align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="brand" href="index.html">SAFARI SEAN CREATIVE</a>
+    <a class="home" href="index.html">Back home ↗</a>
+  </header>
+
+  <main>
+    <section class="opening">
+      <span class="eyebrow">The bookshelf</span>
+      <h1>Well, hello<br>there, reader.</h1>
+      <p>
+        A few books for curious minds.
+        Some have poems. Some have teeth.
+      </p>
+    </section>
+
+    <article class="featured">
+      <div class="cover">
+        <img
+          src="squirrel-bakery.jpg"
+          alt="The Squirrel Bakery by Sean Turner: a muffin on a wooden stool"
+          width="731"
+          height="1025">
+      </div>
+
+      <div>
+        <span class="eyebrow">01 / Poems</span>
+        <h2>The Squirrel Bakery</h2>
+        <p class="description">
+          Poems about ordinary life and the wonderfully odd things
+          hiding in plain sight. Family, friendship, small delights
+          and the occasional squirrel.
+        </p>
+        <span class="note">By Sean Turner</span>
+      </div>
+    </article>
+
+    <section aria-label="More books">
+      <article class="more">
+        <div class="number" aria-hidden="true">2</div>
+        <div>
+          <span class="eyebrow">Picture book</span>
+          <h2>Alligator Out of the Chair</h2>
+          <p class="description">
+            A playful adventure in action words.
+            First, though, there is an alligator in the chair.
+          </p>
+        </div>
+      </article>
+
+      <article class="more">
+        <div class="number" aria-hidden="true">3</div>
+        <div>
+          <span class="eyebrow">Picture book</span>
+          <h2>Make Room, Porcupine!</h2>
+          <p class="description">
+            Shapes, kindness and making room for someone
+            a little different. Quills included.
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    Safari Sean Creative · A little room for wonder.
+  </footer>
+</body>
+</html>
