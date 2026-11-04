@@ -1,1 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Safari Sean Creative</title>
+
+  <style>
+    :root {
+      --cream: #fff6df;
+      --charcoal: #2d2929;
+      --soft: #716964;
+      --lime: #c8db16;
+      --blue: #37c7c2;
+      --coral: #ff6b55;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: auto;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .name {
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    nav a {
+      margin-left: 24px;
+      color: var(--charcoal);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 75vh;
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 24px 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-copy {
+      max-width: 590px;
+    }
+
+    .eyebrow {
+      color: var(--coral);
+      font-weight: bold;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    h1 {
+      margin: 18px 0;
+      font-size: clamp(52px, 8vw, 92px);
+      line-height: .95;
+      letter-spacing: -.06em;
+    }
+
+    .intro {
+      max-width: 500px;
+      color: var(--soft);
+      font-size: 21px;
+      line-height: 1.6;
+    }
+
+    .logo-area {
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .logo-area img {
+      width: min(100%, 440px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .dot {
+      position: absolute;
+      border: 7px solid var(--charcoal);
+      border-radius: 50%;
+    }
+
+    .dot-one {
+      width: 54px;
+      height: 54px;
+      background: var(--coral);
+      top: 10%;
+      right: 5%;
+    }
+
+    .dot-two {
+      width: 35px;
+      height: 35px;
+      background: var(--blue);
+      bottom: 15%;
+      left: 3%;
+    }
+
+    .work {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 100px 24px;
+    }
+
+    .work-inner {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .work h2 {
+      font-size: clamp(42px, 7vw, 72px);
+      margin: 0 0 50px;
+    }
+
+    .category {
+      padding: 32px 0;
+      border-top: 2px solid rgba(255,255,255,.25);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 30px;
+    }
+
+    .category:last-child {
+      border-bottom: 2px solid rgba(255,255,255,.25);
+    }
+
+    .category h3 {
+      margin: 0;
+      color: var(--lime);
+      font-size: 26px;
+    }
+
+    .category p {
+      margin: 0;
+      max-width: 620px;
+      color: #ded5c8;
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 70px 24px;
+      text-align: center;
+    }
+
+    footer strong {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: var(--soft);
+    }
+
+    @media (max-width: 750px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 30px;
+      }
+
+      .intro {
+        margin: auto;
+      }
+
+      .logo-area {
+        grid-row: 1;
+      }
+
+      .logo-area img {
+        width: 280px;
+      }
+
+      .category {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="name">SAFARI SEAN CREATIVE</div>
+
+    <nav>
+      <a href="#work">Books</a>
+      <a href="#work">Games</a>
+      <a href="#work">Made for You</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">A small creative studio</div>
+
+        <h1>Playful inventions for curious people.</h1>
+
+        <p class="intro">
+          Books, games and unusual little things made with care,
+          curiosity and a healthy respect for nonsense.
+        </p>
+      </div>
+
+      <div class="logo-area">
+        <span class="dot dot-one"></span>
+        <img src="ssc-logo.png" alt="Safari Sean Creative emblem">
+        <span class="dot dot-two"></span>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="work-inner">
+        <h2>Things we make.</h2>
+
+        <div class="category">
+          <h3>Books</h3>
+          <p>
+            Picture books, peculiar poems and educational adventures
+            that wander slightly off the approved path.
+          </p>
+        </div>
+
+        <div class="category">
+          <h3>Games</h3>
+          <p>
+            Card games, family games and playful experiments designed
+            to get people laughing around the same table.
+          </p>
+        </div>
+
+        <div class="category">
+          <h3>Made for You</h3>
+          <p>
+            Custom cards, family worlds and one-of-a-kind creative
+            keepsakes built from the people and stories you love.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Safari Sean Creative</strong>
+    <p>More peculiar things are currently being assembled.</p>
+  </footer>
+</body>
+</html>
