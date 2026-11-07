@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Thank You — Safari Sean Creative</title>
+
+  <style>
+    :root {
+      --cream: #fff6df;
+      --ink: #2d2929;
+      --muted: #665e57;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 24px;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    header a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-size: 0.95rem;
+    }
+
+    main {
+      flex: 1;
+      width: min(100% - 40px, 850px);
+      margin: 0 auto;
+      padding: 55px 0 90px;
+      text-align: center;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 750px;
+      margin: 0 auto 28px;
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.06em;
+    }
+
+    .corn {
+      display: block;
+      width: min(100%, 430px);
+      height: auto;
+      margin: 25px auto 20px;
+      mix-blend-mode: multiply;
+    }
+
+    .closing {
+      margin: 20px auto 0;
+      color: var(--ink);
+      font-family: Georgia, serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-style: italic;
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 620px) {
+      main {
+        padding-top: 35px;
+      }
+
+      .corn {
+        width: min(100%, 350px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+      ← Safari Sean Creative
+    </a>
+  </header>
+
+  <main>
+
+    <span class="label">
+      Safari Sean Creative
+    </span>
+
+    <h1>
+      Your peculiarities have been received.
+    </h1>
+
+    <img
+      class="corn"
+      src="ssc-thank-you-corn.jpeg"
+      alt="A smiling ear of corn waving hello"
+    >
+
+    <p class="closing">
+      I'll be in touch soon!
+    </p>
+
+  </main>
+
+  <footer>
+    Safari Sean Creative
+  </footer>
+
+</body>
+</html>
