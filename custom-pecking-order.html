@@ -2,545 +2,775 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Create a personalized 50-card Pecking Order game for your family and friends.">
-  <title>The Pecking Order: Your Edition — Safari Sean Creative</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    :root {
-      --cream: #fff6df;
-      --ink: #2d2929;
-      --muted: #665e57;
-      --lime: #c8db16;
-      --coral: #ff9c87;
-    }
+<meta name="description" content="Create a personalized 50-card Pecking Order game for your family and friends.">
 
-    * { box-sizing: border-box; }
+<title>The Pecking Order: Your Edition — Safari Sean Creative</title>
 
-    html { scroll-behavior: smooth; }
+<style>
+:root {
+  --cream: #fff6df;
+  --ink: #2d2929;
+  --muted: #665e57;
+  --lime: #c8db16;
+  --coral: #ff9c87;
+  --navy: #123653;
+}
 
-    body {
-      margin: 0;
-      background: var(--cream);
-      color: var(--ink);
-      font: 1rem/1.6 Arial, sans-serif;
-    }
+* { box-sizing: border-box; }
 
-    .wrap {
-      width: min(calc(100% - 40px), 960px);
-      margin-inline: auto;
-    }
+html { scroll-behavior: smooth; }
 
-    header { padding-block: 24px; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font: 1rem/1.6 Arial, sans-serif;
+}
 
-    header a {
-      color: inherit;
-      text-underline-offset: 4px;
-    }
+.wrap {
+  width: min(calc(100% - 40px), 960px);
+  margin-inline: auto;
+}
 
-    .intro {
-      padding-block: clamp(38px, 8vw, 85px) 48px;
-    }
+header { padding-block: 24px; }
 
-    .label {
-      display: block;
-      font-size: .75rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
+header a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
 
-    h1 {
-      max-width: 13ch;
-      margin: 12px 0 22px;
-      font-size: clamp(2.7rem, 8vw, 5.25rem);
-      line-height: 1;
-      letter-spacing: -.06em;
-    }
+.intro {
+  padding-block: clamp(38px, 8vw, 85px) 48px;
+}
 
-    h2 {
-      margin: 0 0 22px;
-      font: 400 clamp(2rem, 5vw, 2.8rem)/1.15 Georgia, serif;
-    }
+.label {
+  display: block;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
 
-    p {
-      max-width: 60ch;
-      margin: 0 0 17px;
-      color: var(--muted);
-    }
+h1 {
+  max-width: 13ch;
+  margin: 12px 0 22px;
+  font-size: clamp(2.7rem, 8vw, 5.25rem);
+  line-height: 1;
+  letter-spacing: -.06em;
+}
 
-    .lead {
-      font-size: 1.2rem;
-    }
+h2 {
+  margin: 0 0 22px;
+  font: 400 clamp(2rem, 5vw, 2.8rem)/1.15 Georgia, serif;
+}
 
-    .section {
-      padding-block: 48px;
-    }
+h3 {
+  font: 400 1.5rem/1.25 Georgia, serif;
+}
 
-    .section-heading {
-      margin-bottom: 26px;
-    }
+p {
+  max-width: 65ch;
+  margin: 0 0 17px;
+  color: var(--muted);
+}
 
-    .section-heading .label {
-      margin-bottom: 12px;
-    }
+.lead { font-size: 1.2rem; }
 
-    /* HOW TO PLAY */
+.section { padding-block: 48px; }
 
-    .how-to-play {
-      padding: clamp(26px, 5vw, 46px);
-      background: #e8ecad;
-      border: 1px solid var(--ink);
-      border-radius: 14px;
-    }
+.section-heading { margin-bottom: 26px; }
 
-    .how-to-play p {
-      color: #403e32;
-    }
+.section-heading .label { margin-bottom: 12px; }
 
-    .how-to-play p:last-child {
-      margin-bottom: 0;
-    }
+/* HOW TO PLAY */
 
-    /* EXAMPLE CARDS */
+.how-to-play {
+  padding: clamp(26px, 5vw, 46px);
+  background: #e8ecad;
+  border: 1px solid var(--ink);
+  border-radius: 14px;
+}
 
-    .example-cards-image {
-      display: block;
-      width: 100%;
-      max-width: 900px;
-      height: auto;
-      margin: 20px auto 0;
-      border-radius: 12px;
-    }
+.how-to-play p { color: #403e32; }
 
-    .image-caption {
-      margin: 18px auto 0;
-      text-align: center;
-      font-size: .95rem;
-      font-style: italic;
-    }
+.how-to-play p:last-child { margin-bottom: 0; }
 
-    /* CUSTOM DECK */
+/* EXAMPLE CARDS */
 
-    .custom-intro {
-      padding-top: 60px;
-    }
+.example-cards-image {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  margin: 20px auto 0;
+  border-radius: 12px;
+}
 
-    .custom-intro .label {
-      margin-bottom: 14px;
-    }
+.image-caption {
+  margin: 18px auto 0;
+  text-align: center;
+  font-size: .95rem;
+  font-style: italic;
+}
 
-    .custom-intro strong {
-      color: var(--ink);
-    }
+/* PRICING */
 
-    .closing-line {
-      margin-top: 26px;
-      font-weight: 700;
-      color: var(--ink);
-    }
+.pricing {
+  padding: clamp(26px, 5vw, 46px);
+  background: #fce2d5;
+  border: 1px solid var(--ink);
+  border-radius: 14px;
+}
 
-    /* FORM */
+.price {
+  margin: 12px 0 18px;
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.05em;
+  color: var(--navy);
+}
 
-    .form-area {
-      padding-block: 25px 85px;
-    }
+.price span {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
 
-    form {
-      max-width: 680px;
-      padding: clamp(22px, 5vw, 40px);
-      background: #fffbef;
-      border: 1px solid #2d29294d;
-      border-radius: 12px;
-    }
+.pricing ul {
+  padding-left: 22px;
+  margin-bottom: 0;
+  line-height: 1.9;
+}
 
-    .form-title {
-      margin-bottom: 24px;
-      font: 1.6rem Georgia, serif;
-    }
+.pricing li { padding-left: 4px; }
 
-    label {
-      display: block;
-      margin-top: 24px;
-      font-weight: 700;
-      line-height: 1.4;
-    }
+/* ORDER PROCESS */
 
-    input, textarea {
-      display: block;
-      width: 100%;
-      margin-top: 8px;
-      padding: 13px;
-      border: 1px solid #8a8177;
-      border-radius: 5px;
-      background: #fff;
-      color: var(--ink);
-      font: inherit;
-    }
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
 
-    textarea {
-      resize: vertical;
-    }
+.step {
+  padding: 20px 14px;
+  background: #fffbef;
+  border: 1px solid #2d292944;
+  border-radius: 10px;
+}
 
-    :focus-visible {
-      outline: 3px solid var(--ink);
-      outline-offset: 3px;
-    }
+.step-number {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--navy);
+  font-size: 2rem;
+  font-weight: 800;
+}
 
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 22px;
-      border: 2px solid var(--ink);
-      border-radius: 6px;
-      background: var(--lime);
-      color: var(--ink);
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
-    }
+.step strong {
+  display: block;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
 
-    .button:hover {
-      background: #b7ca0c;
-    }
+.step p {
+  margin: 0;
+  font-size: .9rem;
+}
 
-    .small-note {
-      margin-top: 18px;
-      font-size: .85rem;
-    }
+/* CUSTOM DECK */
 
-    footer {
-      padding: 36px 0;
-      border-top: 1px solid #2d292933;
-      font-size: .85rem;
-    }
+.custom-intro { padding-top: 60px; }
 
-    @media (max-width: 620px) {
-      .intro { padding-bottom: 24px; }
-      .section { padding-block: 35px; }
-      .custom-intro { padding-top: 45px; }
-      .button { width: 100%; }
-    }
-  </style>
+.custom-intro .label { margin-bottom: 14px; }
+
+.custom-intro strong { color: var(--ink); }
+
+.closing-line {
+  margin-top: 26px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* FORM */
+
+.form-area { padding-block: 25px 85px; }
+
+form {
+  max-width: 720px;
+  padding: clamp(22px, 5vw, 40px);
+  background: #fffbef;
+  border: 1px solid #2d29294d;
+  border-radius: 12px;
+}
+
+.form-title { margin-bottom: 12px; }
+
+.form-intro {
+  margin-bottom: 30px;
+  font-size: .95rem;
+}
+
+label {
+  display: block;
+  margin-top: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px;
+  border: 1px solid #8a8177;
+  border-radius: 5px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+textarea { resize: vertical; }
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 22px;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--lime);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover { background: #b7ca0c; }
+
+.small-note {
+  margin-top: 18px;
+  font-size: .85rem;
+}
+
+footer {
+  padding: 36px 0;
+  border-top: 1px solid #2d292933;
+  font-size: .85rem;
+}
+
+@media (max-width: 760px) {
+  .steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .intro { padding-bottom: 24px; }
+  .section { padding-block: 35px; }
+  .custom-intro { padding-top: 45px; }
+  .button { width: 100%; text-align: center; }
+  .steps { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 
 <body>
 
-  <header class="wrap">
-    <a href="made-for-you.html">← Back to Made for You</a>
-  </header>
+<header class="wrap">
+  <a href="made-for-you.html">
+    ← Back to Made for You
+  </a>
+</header>
 
-  <main class="wrap">
+<main class="wrap">
 
-    <!-- PAGE INTRO -->
+<!-- INTRO -->
 
-    <section class="intro">
-      <span class="label">
-        The Pecking Order: Your Edition
-      </span>
+<section class="intro">
 
-      <h1>What would your people put first?</h1>
+  <span class="label">
+    The Pecking Order: Your Edition
+  </span>
 
-      <p class="lead">
-        A game about strange opinions, questionable priorities,
-        and finding out how well you really know your people.
-      </p>
-    </section>
+  <h1>What would your people put first?</h1>
 
-    <!-- WHAT IS THE PECKING ORDER -->
+  <p class="lead">
+    A game about strange opinions, questionable
+    priorities, and finding out how well you
+    really know your people.
+  </p>
 
-    <section class="section" aria-labelledby="how-title">
+</section>
 
-      <div class="how-to-play">
+<!-- WHAT IS THE PECKING ORDER -->
 
-        <span class="label">The Game</span>
+<section class="section" aria-labelledby="how-title">
 
-        <h2 id="how-title">
-          What is The Pecking Order?
-        </h2>
+  <div class="how-to-play">
 
-        <p>
-          A game about ranking things that probably
-          shouldn't be ranked.
-        </p>
+    <span class="label">The Game</span>
 
-        <p>
-          Five cards are drawn from the deck.
-          One player is chosen, and everyone else
-          secretly ranks those five cards from best
-          to worst based on how they think that
-          player would rank them.
-        </p>
+    <h2 id="how-title">
+      What is The Pecking Order?
+    </h2>
 
-        <p>
-          Then the chosen player reveals their
-          actual ranking.
-        </p>
+    <p>
+      A game about ranking things that probably
+      shouldn't be ranked.
+    </p>
 
-        <p>
-          Compare your answers and find out
-          who knows them best.
-        </p>
+    <p>
+      Five cards are drawn from the deck.
+      One player is chosen, and everyone else
+      secretly ranks those five cards from best
+      to worst based on how they think that
+      player would rank them.
+    </p>
 
-        <p>
-          You might know your best friend's birthday,
-          favorite color, and middle name.
-          But do you know where they'd rank
-          gas station pizza?
-        </p>
+    <p>
+      Then the chosen player reveals their
+      actual ranking.
+    </p>
 
-      </div>
-    </section>
+    <p>
+      Compare your answers and find out
+      who knows them best.
+    </p>
 
-    <!-- EXAMPLE CARDS -->
+    <p>
+      You might know your best friend's birthday,
+      favorite color, and middle name.
+      But do you know where they'd rank
+      gas station pizza?
+    </p>
 
-    <section class="section" aria-labelledby="examples-title">
+  </div>
 
-      <div class="section-heading">
-        <span class="label">The Possibilities</span>
+</section>
 
-        <h2 id="examples-title">
-          A few cards that could be in your deck
-        </h2>
-      </div>
+<!-- FIVE CARD IMAGE -->
 
-      <img
-        class="example-cards-image"
-        src="595BD7C8-912A-4B8C-980A-B53B6A02EDA3.png"
-        alt="Three illustrated custom Pecking Order example cards"
-        loading="lazy"
-      >
+<section class="section" aria-labelledby="examples-title">
 
-      <p class="image-caption">
-        Five cards. Five rankings. An unreasonable
-        amount of disagreement.
-      </p>
+  <div class="section-heading">
 
-    </section>
+    <span class="label">The Possibilities</span>
 
-    <!-- YOUR CUSTOM DECK -->
+    <h2 id="examples-title">
+      Five cards. A whole lot of opinions.
+    </h2>
 
-    <section class="custom-intro" id="questionnaire">
+    <p>
+      Imagine a game filled with the people,
+      places, foods, and peculiarities
+      your group knows best.
+    </p>
 
-      <span class="label">Your Custom Deck</span>
+  </div>
 
-      <h2>Give me something to work with.</h2>
+  <img
+    class="example-cards-image"
+    src="595BD7C8-912A-4B8C-980A-B53B6A02EDA3.jpeg"
+    alt="Five Pecking Order cards displayed in a wooden ranking stand"
+    loading="lazy"
+  >
 
+  <p class="image-caption">
+    Five cards. Five rankings.
+    An unreasonable amount of disagreement.
+  </p>
+
+</section>
+
+<!-- CUSTOM DECK -->
+
+<section class="custom-intro" id="questionnaire">
+
+  <span class="label">Your Custom Deck</span>
+
+  <h2>Give me something to work with.</h2>
+
+  <p>
+    Every family has its own collection of
+    strange opinions, inside jokes, local legends,
+    and people who shouldn't be allowed
+    near the aux cord.
+  </p>
+
+  <p>
+    Answer a few questions about your people,
+    and I'll use your answers to create
+    <strong>50 personalized Pecking Order cards.</strong>
+  </p>
+
+  <p class="closing-line">
+    You supply the peculiar details.
+    I'll do the creating.
+  </p>
+
+  <p>
+    The more specific, the better.
+    Skip anything that doesn't apply.
+  </p>
+
+</section>
+
+<!-- PRICE -->
+
+<section class="section" aria-labelledby="price-title">
+
+  <div class="pricing">
+
+    <span class="label">
+      Made Specifically for Your People
+    </span>
+
+    <h2 id="price-title">
+      Your very own Pecking Order.
+    </h2>
+
+    <div class="price">
+      $79 <span>+ shipping</span>
+    </div>
+
+    <p>
+      A professionally printed, personalized
+      50-card game built around your family's
+      favorite things, inside jokes,
+      strange opinions, and questionable habits.
+    </p>
+
+    <ul>
+      <li>50 personalized playing cards</li>
+      <li>Custom content inspired by your answers</li>
+      <li>Original Pecking Order card design</li>
+      <li>A digital proof before printing</li>
+      <li>One round of minor revisions</li>
+    </ul>
+
+    <a class="button" href="#order-form">
+      Create My Deck →
+    </a>
+
+  </div>
+
+</section>
+
+<!-- HOW ORDERING WORKS -->
+
+<section class="section" aria-labelledby="steps-title">
+
+  <div class="section-heading">
+
+    <span class="label">The Process</span>
+
+    <h2 id="steps-title">
+      From your strange little world to a real game.
+    </h2>
+
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <span class="step-number">01</span>
+      <strong>Tell me everything.</strong>
       <p>
-        Every family has its own collection of
-        strange opinions, inside jokes, local legends,
-        and people who shouldn't be allowed
-        near the aux cord.
+        Fill out the questionnaire with
+        your group's peculiar details.
       </p>
+    </div>
 
+    <div class="step">
+      <span class="step-number">02</span>
+      <strong>I'll get creative.</strong>
       <p>
-        Answer a few questions about your people,
-        and I'll use your answers to create
-        <strong>50 personalized Pecking Order cards.</strong>
+        I'll turn your answers into
+        50 personalized cards.
       </p>
+    </div>
 
-      <p class="closing-line">
-        You supply the peculiar details.
-        I'll do the creating.
-      </p>
-
+    <div class="step">
+      <span class="step-number">03</span>
+      <strong>Take a peek.</strong>
       <p>
-        The more specific, the better.
-        Skip anything that doesn't apply.
+        Review your digital proof
+        and request minor changes.
       </p>
+    </div>
 
-    </section>
+    <div class="step">
+      <span class="step-number">04</span>
+      <strong>Make it official.</strong>
+      <p>
+        Approve your deck and complete
+        payment before printing.
+      </p>
+    </div>
 
-    <!-- QUESTIONNAIRE -->
+    <div class="step">
+      <span class="step-number">05</span>
+      <strong>Let the arguments begin.</strong>
+      <p>
+        Your game gets printed
+        and shipped to you.
+      </p>
+    </div>
 
-    <section class="form-area" aria-label="Custom deck request form">
+  </div>
 
-      <form
-        action="https://formsubmit.co/Safarisean3@gmail.com"
-        method="POST"
-      >
+</section>
 
-        <!-- EMAIL SETTINGS -->
+<!-- QUESTIONNAIRE -->
 
-        <input
-          type="hidden"
-          name="_subject"
-          value="New Pecking Order Custom Deck Request"
-        >
+<section class="form-area" id="order-form"
+  aria-label="Custom deck request form">
 
-        <input
-          type="hidden"
-          name="_captcha"
-          value="true"
-        >
+  <form
+    action="https://formsubmit.co/Safarisean3@gmail.com"
+    method="POST"
+  >
 
-        <input
-          type="hidden"
-          name="_template"
-          value="table"
-        >
+    <input
+      type="hidden"
+      name="_subject"
+      value="New Pecking Order Custom Deck Request"
+    >
 
-        <h3 class="form-title">
-          Tell me about your people.
-        </h3>
+    <input
+      type="hidden"
+      name="_captcha"
+      value="true"
+    >
 
-        <!-- CUSTOMER DETAILS -->
+    <input
+      type="hidden"
+      name="_template"
+      value="table"
+    >
 
-        <label for="customer-name">
-          Your name
-        </label>
+    <h3 class="form-title">
+      Tell me about your people.
+    </h3>
 
-        <input
-          id="customer-name"
-          name="Customer Name"
-          type="text"
-          autocomplete="name"
-          required
-          placeholder="Your name"
-        >
+    <p class="form-intro">
+      Don't worry about being clever.
+      That's my job. Just give me the
+      wonderfully specific details.
+    </p>
 
-        <label for="customer-email">
-          Your email
-        </label>
+    <!-- CUSTOMER DETAILS -->
 
-        <input
-          id="customer-email"
-          name="email"
-          type="email"
-          autocomplete="email"
-          required
-          placeholder="you@example.com"
-        >
+    <label for="customer-name">
+      Your name
+    </label>
 
-        <!-- GROUP -->
+    <input
+      id="customer-name"
+      name="Customer Name"
+      type="text"
+      autocomplete="name"
+      required
+      placeholder="Your name"
+    >
 
-        <label for="group">
-          Who's this deck for?
-        </label>
+    <label for="customer-email">
+      Your email
+    </label>
 
-        <textarea
-          id="group"
-          name="Who Is Playing"
-          rows="2"
-          required
-          placeholder="Our cousins, old roommates, wrestling coaches..."
-        ></textarea>
+    <input
+      id="customer-email"
+      name="email"
+      type="email"
+      autocomplete="email"
+      required
+      placeholder="you@example.com"
+    >
 
-        <!-- TOWN / COLLEGE -->
+    <!-- GROUP -->
 
-        <label for="places">
-          What town or college should be in the deck?
-        </label>
+    <label for="group">
+      Who's this deck for?
+    </label>
 
-        <textarea
-          id="places"
-          name="Hometown and College"
-          rows="3"
-          placeholder="Local restaurants, landmarks, campus traditions, rival schools..."
-        ></textarea>
+    <textarea
+      id="group"
+      name="Who Is Playing"
+      rows="3"
+      required
+      placeholder="Our cousins, old roommates, wrestling coaches..."
+    ></textarea>
 
-        <!-- INSIDE JOKES -->
+    <!-- TOWN AND COLLEGE -->
 
-        <label for="jokes">
-          What jokes or stories refuse to die?
-        </label>
+    <label for="places">
+      What town, college, or special place
+      should be in the deck?
+    </label>
 
-        <textarea
-          id="jokes"
-          name="Inside Jokes"
-          rows="3"
-          placeholder="The vacation incident nobody has forgotten..."
-        ></textarea>
+    <textarea
+      id="places"
+      name="Hometown and College"
+      rows="3"
+      placeholder="Local restaurants, landmarks, campus traditions, rival schools..."
+    ></textarea>
 
-        <!-- PET PEEVES -->
+    <!-- INSIDE JOKES -->
 
-        <label for="peeves">
-          What gets on your people's nerves?
-        </label>
+    <label for="jokes">
+      What jokes or stories refuse to die?
+    </label>
 
-        <textarea
-          id="peeves"
-          name="Pet Peeves"
-          rows="3"
-          placeholder="Slow walkers, people who clap when planes land..."
-        ></textarea>
+    <textarea
+      id="jokes"
+      name="Inside Jokes"
+      rows="3"
+      placeholder="The vacation incident nobody has forgotten..."
+    ></textarea>
 
-        <!-- FAMOUS PEOPLE -->
+    <!-- PET PEEVES -->
 
-        <label for="famous">
-          Any famous people your group loves
-          or loves to hate?
-        </label>
+    <label for="peeves">
+      What gets on your people's nerves?
+    </label>
 
-        <textarea
-          id="famous"
-          name="Famous People"
-          rows="3"
-          placeholder="Athletes, celebrities, public figures..."
-        ></textarea>
+    <textarea
+      id="peeves"
+      name="Pet Peeves"
+      rows="3"
+      placeholder="Slow walkers, people who clap when planes land..."
+    ></textarea>
 
-        <!-- SNACKS -->
+    <!-- FAMOUS PEOPLE -->
 
-        <label for="snacks">
-          What snacks could your group crush
-          in one sitting?
-        </label>
+    <label for="famous">
+      Any famous people your group loves
+      or loves to hate?
+    </label>
 
-        <textarea
-          id="snacks"
-          name="Favorite Snacks"
-          rows="3"
-          placeholder="Specific brands, gas station snacks, local favorites..."
-        ></textarea>
+    <textarea
+      id="famous"
+      name="Famous People"
+      rows="3"
+      placeholder="Athletes, celebrities, public figures..."
+    ></textarea>
 
-        <!-- PERSONAL DETAILS -->
+    <!-- SNACKS -->
 
-        <label for="personal">
-          What else makes your people your people?
-        </label>
+    <label for="snacks">
+      What snacks could your group crush
+      in one sitting?
+    </label>
 
-        <textarea
-          id="personal"
-          name="Other Personal Details"
-          rows="4"
-          placeholder="Nicknames, family traditions, favorite places, questionable habits..."
-        ></textarea>
+    <textarea
+      id="snacks"
+      name="Favorite Snacks"
+      rows="3"
+      placeholder="Specific brands, gas station snacks, local favorites..."
+    ></textarea>
 
-        <!-- OFF LIMITS -->
+    <!-- FOOD AND DRINK -->
 
-        <label for="avoid">
-          Anything that should stay out of the deck?
-        </label>
+    <label for="food">
+      What foods or drinks inspire
+      unusually strong opinions?
+    </label>
 
-        <textarea
-          id="avoid"
-          name="Topics To Avoid"
-          rows="2"
-          placeholder="Anything off limits..."
-        ></textarea>
+    <textarea
+      id="food"
+      name="Food and Drink Opinions"
+      rows="3"
+      placeholder="The superior fast-food order, a terrible local restaurant, an oddly beloved soda..."
+    ></textarea>
 
-        <!-- SUBMIT -->
+    <!-- PEOPLE -->
 
-        <button class="button" type="submit">
-          Submit my custom deck request →
-        </button>
+    <label for="characters">
+      Who are the legendary characters
+      in your group's history?
+    </label>
 
-        <p class="small-note">
-          Your answers will be sent to Safari Sean Creative
-          to help create your personalized 50-card deck.
-          This is a request, not a purchase.
-        </p>
+    <textarea
+      id="characters"
+      name="Legendary Characters"
+      rows="3"
+      placeholder="A memorable teacher, an eccentric neighbor, an old coach..."
+    ></textarea>
 
-      </form>
+    <!-- ACTIVITIES -->
 
-    </section>
+    <label for="activities">
+      What activities, traditions, or
+      experiences should make an appearance?
+    </label>
 
-  </main>
+    <textarea
+      id="activities"
+      name="Activities and Traditions"
+      rows="3"
+      placeholder="Lake weekends, karaoke, family reunions, pickup basketball..."
+    ></textarea>
 
-  <footer class="wrap">
-    Safari Sean Creative
-  </footer>
+    <!-- PERSONAL DETAILS -->
+
+    <label for="personal">
+      What else makes your people your people?
+    </label>
+
+    <textarea
+      id="personal"
+      name="Other Personal Details"
+      rows="4"
+      placeholder="Nicknames, family traditions, favorite places, questionable habits..."
+    ></textarea>
+
+    <!-- OFF LIMITS -->
+
+    <label for="avoid">
+      Anything that should stay out of the deck?
+    </label>
+
+    <textarea
+      id="avoid"
+      name="Topics To Avoid"
+      rows="2"
+      placeholder="Anything off limits..."
+    ></textarea>
+
+    <!-- SUBMIT -->
+
+    <button class="button" type="submit">
+      Submit My Custom Deck Request →
+    </button>
+
+    <p class="small-note">
+      Submitting this form does not charge you.
+      I'll review your answers and contact you
+      about your custom $79 deck plus shipping.
+      Payment is arranged before printing.
+    </p>
+
+  </form>
+
+</section>
+
+</main>
+
+<footer class="wrap">
+  Safari Sean Creative
+  <p>
+    Strange ideas welcome.
+  </p>
+</footer>
 
 </body>
 </html>
