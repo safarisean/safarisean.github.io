@@ -6,17 +6,22 @@
   <title>Made for You — Safari Sean Creative</title>
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       background: #fff6df;
       color: #2d2929;
       font-family: Arial, sans-serif;
     }
+
     a { color: inherit; text-underline-offset: 4px; }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
     .wrap {
-      width: min(100% - 48px, 1000px);
+      width: min(calc(100% - 48px), 1000px);
       margin-inline: auto;
     }
+
     header {
       display: flex;
       flex-wrap: wrap;
@@ -25,40 +30,31 @@
       padding-block: 28px;
       font-size: 14px;
     }
+
     .brand, .label {
       font-weight: 800;
       letter-spacing: .1em;
     }
+
     .brand { text-decoration: none; }
-    .intro { padding-block: clamp(44px, 10vw, 100px) 52px; }
     .label { font-size: 12px; text-transform: uppercase; }
+    main { padding-block: clamp(44px, 10vw, 100px) 52px; }
+
     h1 {
-      max-width: 12ch;
+      max-width: 14ch;
       margin: 16px 0 22px;
-      font-size: clamp(44px, 9vw, 90px);
+      font-size: clamp(40px, 9vw, 90px);
       line-height: 1;
       letter-spacing: -.06em;
     }
+
     p {
       max-width: 55ch;
       color: #665e57;
       font-size: 18px;
       line-height: 1.65;
     }
-    .project {
-      border-top: 1px solid #2d292933;
-      padding-block: 28px;
-    }
-    h2 {
-      margin: 0 0 10px;
-      font: 400 clamp(27px, 5vw, 38px)/1.15 Georgia, serif;
-    }
-    .project p { margin: 0; }
-    .note {
-      border-left: 5px solid #c8db16;
-      padding-left: 18px;
-      margin-block: 28px 60px;
-    }
+
     footer { padding-bottom: 32px; font-size: 13px; }
   </style>
 </head>
@@ -69,45 +65,29 @@
   </header>
 
   <main class="wrap">
-    <section class="intro">
-      <span class="label">Made for You</span>
-      <h1>Only your family would get it.</h1>
-      <p>
-        Every family has a story they tell too often, a dog with four
-        nicknames, or a snack nobody is allowed to finish.
-        I turn those little details into games and things you can enjoy
-      </p>
-    </section>
+    <span class="label">Made for You</span>
+    <h1>Grown-ups don’t get enough recess.</h1>
 
-    <section class="project">
-      <h2>Personalized matching games</h2>
-      <p>
-        Flip over two cards and find a pair: the family dog, a favorite
-        vacation spot, or the casserole that shows up at every holiday.
-      </p>
-    </section>
+    <p>
+      When we were kids, somebody rang a bell and sent us outside to play.
+      Now the only thing that rings is the dryer.
+    </p>
 
-    <section class="project">
-      <h2>Custom Pecking Order cards</h2>
-      <p>
-        Turn your hometown landmarks, pet peeves and favorite snacks into
-        cards your group can rank and argue about. Is the good gas station
-        really better than the good pizza place?
-      </p>
-    </section>
+    <p>
+      I think grown-ups have a play deficit. I don’t mean we need another
+      hobby to get good at. I mean we could use more time around a table,
+      laughing with people we like, doing something that doesn’t need to be useful.
+    </p>
 
-    <section class="project">
-      <h2>Curious Creature cards</h2>
-      <p>
-        Turn a real place or memory into an imaginary world. The creek
-        behind Grandma’s house might turn out to need a troll bridge
-        inspector.
-      </p>
-    </section>
+    <p>
+      So I make games out of the stuff only your people would get: the dog
+      with four nicknames, the creek behind Grandma’s house, the gas station
+      everybody insists has the best pizza.
+    </p>
 
-    <p class="note">
-      <strong>Start with three things:</strong> a place you love, a story
-      you always tell, and something that makes your people laugh.
+    <p>
+      Because sometimes the best way to get grown-ups to play is to put
+      that gas station on a card and make them defend it.
     </p>
   </main>
 
