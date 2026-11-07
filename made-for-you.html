@@ -4,27 +4,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Custom games, puzzles and imaginary worlds inspired by your family, friends and favorite little things.">
+
+  <meta name="description"
+    content="Personalized toys, games, puzzles, art, and peculiar creations. You bring the people. I'll bring the ideas.">
+
   <title>Made for You — Safari Sean Creative</title>
+
   <style>
+    :root {
+      --cream: #fff6df;
+      --paper: #fffbef;
+      --ink: #2d2929;
+      --muted: #665e57;
+      --lime: #c8db16;
+      --coral: #ff9c87;
+      --aqua: #80d6ce;
+      --navy: #123653;
+    }
+
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      background: #fff6df;
-      color: #2d2929;
+      background: var(--cream);
+      color: var(--ink);
       font: 1rem/1.6 Arial, sans-serif;
     }
 
-    a { color: inherit; text-underline-offset: 4px; }
-    a:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
-    .wrap { width: min(calc(100% - 40px), 1000px); margin-inline: auto; }
+    a {
+      color: inherit;
+      text-underline-offset: 4px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--navy);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(calc(100% - 40px), 1000px);
+      margin-inline: auto;
+    }
 
     header {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 10px 24px;
+      gap: 12px 24px;
       padding-block: 24px;
       font-size: .875rem;
     }
@@ -37,18 +65,96 @@
     }
 
     .brand { text-decoration: none; }
-    .intro { padding-block: clamp(48px, 10vw, 100px) 48px; }
+
+    .intro {
+      padding-block: clamp(50px, 10vw, 105px) 65px;
+    }
 
     h1 {
       max-width: 14ch;
-      margin: 12px 0 22px;
-      font-size: clamp(2.7rem, 8vw, 5.5rem);
-      line-height: 1;
+      margin: 14px 0 28px;
+      font-size: clamp(3rem, 8vw, 5.7rem);
+      line-height: 1.02;
       letter-spacing: -.06em;
     }
 
-    p { margin: 0; max-width: 58ch; color: #665e57; }
-    .intro p { font-size: 1.2rem; }
+    h2 {
+      margin: 0 0 18px;
+      font: 400 clamp(2rem, 5vw, 3rem)/1.12 Georgia, serif;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font: 400 1.75rem/1.2 Georgia, serif;
+    }
+
+    p {
+      max-width: 65ch;
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .lead {
+      font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+    }
+
+    .intro strong { color: var(--ink); }
+
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 14px 22px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background: var(--lime);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .button:hover { background: #b7ca0c; }
+
+    .button-dark {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .button-dark:hover { background: var(--navy); }
+
+    /* INTRO PROMISE */
+
+    .promise {
+      padding: clamp(26px, 5vw, 46px);
+      background: #e8ecad;
+      border: 1px solid var(--ink);
+      border-radius: 14px;
+    }
+
+    .promise h2 { max-width: 17ch; }
+
+    .promise p { color: #403e32; }
+
+    .promise p:last-child { margin-bottom: 0; }
+
+    /* SECTIONS */
+
+    .section {
+      padding-block: 70px 35px;
+    }
+
+    .section-heading {
+      margin-bottom: 30px;
+    }
+
+    .section-heading .label {
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    /* CREATION CARDS */
 
     .projects {
       display: grid;
@@ -57,136 +163,738 @@
     }
 
     .project {
-      padding: clamp(20px, 4vw, 34px);
+      padding: clamp(22px, 4vw, 34px);
       border: 1px solid #2d29294d;
       border-radius: 12px;
-      background: #fffbef;
+      background: var(--paper);
     }
 
-    .featured {
-      grid-column: 1 / -1;
-      background: #e8ecad;
-      border-color: #2d2929;
-    }
+    .project h3 { margin-top: 8px; }
+
+    .project p { margin-bottom: 0; }
 
     .mark {
       display: inline-grid;
       place-items: center;
-      width: 38px;
-      height: 38px;
-      margin-bottom: 12px;
-      border: 1px solid #2d2929;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 18px;
+      border: 1px solid var(--ink);
       border-radius: 50%;
-      background: #80d6ce;
-      font: 1.25rem Georgia, serif;
+      background: var(--aqua);
+      font: 1.5rem Georgia, serif;
     }
 
-    .puzzle .mark, .other .mark { background: #ff9c87; }
-    .featured .mark { background: #c8db16; }
+    .toy .mark { background: var(--coral); }
+    .game .mark { background: var(--lime); }
+    .puzzle .mark { background: var(--aqua); }
+    .art .mark { background: #e5c5ef; }
+    .strange .mark { background: #ffcf72; }
 
-    h2 {
-      margin: 0 0 10px;
-      font: 400 clamp(1.65rem, 4vw, 2.4rem)/1.1 Georgia, serif;
+    .strange {
+      grid-column: 1 / -1;
+      background: #fce2d5;
     }
 
-    .featured h2 { margin-top: 8px; }
+    /* FEATURED CREATION */
 
-    .button {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 10px 16px;
-      border-radius: 5px;
-      background: #2d2929;
-      color: #fff6df;
+    .featured {
+      margin-top: 30px;
+      padding: clamp(26px, 5vw, 48px);
+      border: 1px solid var(--ink);
+      border-radius: 14px;
+      background: #e8ecad;
+    }
+
+    .featured .label {
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .featured h2 { max-width: 18ch; }
+
+    .featured strong { color: var(--ink); }
+
+    .featured .button { margin-top: 12px; }
+
+    /* PROCESS */
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .process-step {
+      padding: 26px;
+      border: 1px solid #2d292944;
+      border-radius: 12px;
+      background: var(--paper);
+    }
+
+    .process-number {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--navy);
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .process-step h3 { font-size: 1.45rem; }
+
+    .process-step p {
+      margin: 0;
+      font-size: .95rem;
+    }
+
+    /* INQUIRY */
+
+    .inquiry {
+      padding-block: 85px 90px;
+    }
+
+    .inquiry-intro {
+      margin-bottom: 35px;
+    }
+
+    .inquiry-intro .label {
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    form {
+      max-width: 760px;
+      padding: clamp(24px, 5vw, 44px);
+      background: var(--paper);
+      border: 1px solid #2d29294d;
+      border-radius: 14px;
+    }
+
+    form h3 { margin-bottom: 10px; }
+
+    .form-note {
+      font-size: .95rem;
+      margin-bottom: 28px;
+    }
+
+    label {
+      display: block;
+      margin-top: 25px;
       font-weight: 700;
-      text-decoration: none;
+      line-height: 1.4;
     }
 
-    .button:hover { text-decoration: underline; }
-    footer { padding-block: 42px 30px; font-size: .85rem; }
+    input, textarea, select {
+      display: block;
+      width: 100%;
+      margin-top: 9px;
+      padding: 13px;
+      border: 1px solid #8a8177;
+      border-radius: 5px;
+      background: white;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    textarea { resize: vertical; }
+
+    .small-note {
+      margin-top: 20px;
+      font-size: .85rem;
+    }
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid #2d292933;
+      font-size: .85rem;
+    }
+
+    @media (max-width: 700px) {
+      .process { grid-template-columns: 1fr; }
+    }
 
     @media (max-width: 620px) {
       .projects { grid-template-columns: 1fr; }
+      .strange { grid-column: auto; }
+      .section { padding-top: 55px; }
+      .inquiry { padding-block: 65px; }
+      .button { width: 100%; }
     }
   </style>
 </head>
+
 <body>
-  <header class="wrap">
-    <a class="brand" href="index.html">Safari Sean Creative</a>
-    <a href="index.html">← Back home</a>
-  </header>
 
-  <main class="wrap">
-    <section class="intro">
-      <span class="label">Made for You</span>
-      <h1>Your people. Your peculiar little world.</h1>
+<header class="wrap">
+  <a class="brand" href="index.html">
+    Safari Sean Creative
+  </a>
+
+  <a href="index.html">
+    ← Back home
+  </a>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+
+  <section class="intro">
+
+    <span class="label">Made for You</span>
+
+    <h1>
+      You bring the people.
+      I'll bring the ideas.
+    </h1>
+
+    <p class="lead">
+      Every family has its own stories,
+      strange traditions, inside jokes,
+      and wonderfully peculiar people.
+    </p>
+
+    <p class="lead">
+      You don't need to know what to make
+      with any of that.
+    </p>
+
+    <p class="lead">
+      <strong>That's what I'm here for.</strong>
+    </p>
+
+    <a class="button" href="#tell-me">
+      Tell Me About Your People →
+    </a>
+
+  </section>
+
+  <!-- CREATIVE PROMISE -->
+
+  <section class="promise">
+
+    <span class="label">
+      A Little Creative Assistance
+    </span>
+
+    <h2>
+      You supply the peculiar details.
+      I'll do the creating.
+    </h2>
+
+    <p>
+      Tell me who you're celebrating,
+      what makes them laugh,
+      what they're obsessed with,
+      or what makes them wonderfully odd.
+    </p>
+
+    <p>
+      I'll take those little details
+      and dream up something made
+      specifically for them.
+    </p>
+
+    <p>
+      It might be a game, a toy,
+      a puzzle, a piece of art,
+      or something neither of us
+      knew existed until now.
+    </p>
+
+  </section>
+
+  <!-- CREATIVE CATEGORIES -->
+
+  <section class="section"
+    aria-labelledby="possibilities-title">
+
+    <div class="section-heading">
+
+      <span class="label">
+        A Few Possibilities
+      </span>
+
+      <h2 id="possibilities-title">
+        What could we make?
+      </h2>
+
       <p>
-        Tell me what your people love, what they laugh about, and what
-        they bring up at every Thanksgiving. I’ll turn those little
-        details into games, puzzles, toys, and worlds that could only belong to you.
-        The dog’s ridiculous nickname is absolutely relevant.
+        These aren't boxes you have to choose from.
+        They're just a few places
+        my imagination likes to wander.
       </p>
-    </section>
 
-    <section class="projects" aria-label="Custom creations">
-      <article class="project featured">
+    </div>
+
+    <div class="projects">
+
+      <!-- TOYS -->
+
+      <article class="project toy">
+
+        <span class="mark" aria-hidden="true">✳</span>
+
+        <h3>Custom Toys</h3>
+
+        <p>
+          Peculiar characters, imaginative
+          playthings, little inventions,
+          and toys that seem like
+          they should already exist.
+          But don't.
+        </p>
+
+      </article>
+
+      <!-- GAMES -->
+
+      <article class="project game">
+
         <span class="mark" aria-hidden="true">↕</span>
-        <div class="label">Featured customization</div>
-        <h2>Ranking Game</h2>
+
+        <h3>Custom Games</h3>
+
         <p>
-          <strong>The Pecking Order: Your Edition.</strong>
-          Put hometown favorites, family pet peeves and highly debatable
-          snacks on cards. Then find out who’s willing to defend the gas
-          station pizza in front of the entire family.
+          Card games, matching games,
+          ranking games, and playful
+          competitions built around
+          the people who will play them.
+          Your inside jokes might
+          finally become useful.
         </p>
-        <a class="button" href="custom-pecking-order.html">
-          See example cards &amp; start your deck →
-        </a>
+
       </article>
 
-      <article class="project">
-        <span class="mark" aria-hidden="true">Ⅱ</span>
-        <h2>Matching Game</h2>
-        <p>
-          Flip over a card. There’s the family dog. Flip another.
-          There’s the family dog again. Give your favorite people, places
-          and wonderfully specific objects a pair of their own.
-        </p>
-      </article>
+      <!-- PUZZLES -->
 
       <article class="project puzzle">
+
         <span class="mark" aria-hidden="true">◇</span>
-        <h2>Custom Puzzles</h2>
+
+        <h3>Puzzles</h3>
+
         <p>
-          Grandma’s kitchen, the old family cabin or a map of your
-          neighborhood as you remember it. Pick a scene worth spending
-          an afternoon with. I’ll make it a puzzle.
+          Favorite places, familiar faces,
+          childhood memories, and
+          imaginary worlds turned into
+          something you can spend
+          an afternoon putting together.
         </p>
+
       </article>
 
-      <article class="project">
+      <!-- ART -->
+
+      <article class="project art">
+
         <span class="mark" aria-hidden="true">✦</span>
-        <h2>For the More Serious Gamers</h2>
+
+        <h3>Art</h3>
+
         <p>
-          For the group that reads the rulebook before game night:
-          imagine custom characters, locations and scenarios built around
-          your people. The creek behind Grandma’s house might need a
-          bridge inspector. The bridge inspector might be a troll.
+          Curious portraits, personal
+          illustrations, peculiar scenes,
+          and artwork that means
+          something to a particular person.
+          The family dog can absolutely
+          be the main character.
         </p>
+
       </article>
 
-      <article class="project other">
-        <span class="mark" aria-hidden="true">+</span>
-        <h2>Other Creations</h2>
-        <p>
-          Maybe it’s a tiny field guide to your family’s sayings.
-          Maybe it’s an illustrated map of a place only the cousins know.
-          It doesn’t have to fit in a game box.
-        </p>
-      </article>
-    </section>
-  </main>
+      <!-- STRANGE IDEAS -->
 
-  <footer class="wrap">Safari Sean Creative</footer>
+      <article class="project strange">
+
+        <span class="mark" aria-hidden="true">?</span>
+
+        <h3>Strange Ideas Welcome</h3>
+
+        <p>
+          Maybe it's a miniature museum
+          of your family's ridiculous sayings.
+          Maybe it's a board game about
+          your neighborhood.
+          Maybe it's a thing
+          that doesn't have a name yet.
+        </p>
+
+        <p style="margin-top:14px;">
+          If it doesn't fit neatly
+          into a category,
+          that might be a good sign.
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- FEATURED CUSTOMIZATION -->
+
+  <section class="section"
+    aria-labelledby="featured-title">
+
+    <div class="featured">
+
+      <span class="label">
+        Featured Custom Creation
+      </span>
+
+      <h2 id="featured-title">
+        The Pecking Order:
+        Your Edition
+      </h2>
+
+      <p>
+        How well do you really know your people?
+      </p>
+
+      <p>
+        I'll turn your group's hometown favorites,
+        family pet peeves, beloved snacks,
+        local legends, and strange opinions
+        into a personalized 50-card ranking game.
+      </p>
+
+      <p>
+        Then you get to find out who knows
+        Uncle Randy well enough to predict
+        where he'd rank gas station pizza.
+      </p>
+
+      <p>
+        <strong>
+          50 personalized cards.
+          $79 plus shipping.
+        </strong>
+      </p>
+
+      <a class="button button-dark"
+        href="custom-pecking-order.html">
+        Explore Your Custom Pecking Order →
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- HOW IT WORKS -->
+
+  <section class="section"
+    aria-labelledby="process-title">
+
+    <div class="section-heading">
+
+      <span class="label">The Process</span>
+
+      <h2 id="process-title">
+        You don't need a big idea.
+      </h2>
+
+      <p>
+        You don't even need a small one.
+        We can start with a person.
+      </p>
+
+    </div>
+
+    <div class="process">
+
+      <div class="process-step">
+
+        <span class="process-number">01</span>
+
+        <h3>Tell me about them.</h3>
+
+        <p>
+          Their interests, odd habits,
+          favorite things, and whatever
+          makes them unmistakably them.
+        </p>
+
+      </div>
+
+      <div class="process-step">
+
+        <span class="process-number">02</span>
+
+        <h3>I'll dream something up.</h3>
+
+        <p>
+          I'll come up with a creative
+          direction and share an idea
+          and estimated price with you.
+        </p>
+
+      </div>
+
+      <div class="process-step">
+
+        <span class="process-number">03</span>
+
+        <h3>Let's make it real.</h3>
+
+        <p>
+          If you love the idea,
+          we'll work out the details
+          and bring it into existence.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GENERAL INQUIRY -->
+
+  <section class="inquiry" id="tell-me"
+    aria-labelledby="inquiry-title">
+
+    <div class="inquiry-intro">
+
+      <span class="label">
+        Let's Make Something
+      </span>
+
+      <h2 id="inquiry-title">
+        Tell me about your people.
+      </h2>
+
+      <p>
+        Don't worry about what to make.
+        Tell me about the person,
+        family, or group you have in mind.
+      </p>
+
+      <p>
+        The more peculiar the details,
+        the more interesting
+        the possibilities.
+      </p>
+
+    </div>
+
+    <form
+      action="https://formsubmit.co/Safarisean3@gmail.com"
+      method="POST">
+
+      <!-- FORM SETTINGS -->
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="New SSC Creative Project Inquiry"
+      >
+
+      <input
+        type="hidden"
+        name="_captcha"
+        value="true"
+      >
+
+      <input
+        type="hidden"
+        name="_template"
+        value="table"
+      >
+
+      <input
+        type="hidden"
+        name="_next"
+        value="https://safarisean.github.io/thank-you.html"
+      >
+
+      <h3>
+        Give me something to work with.
+      </h3>
+
+      <p class="form-note">
+        A few details are plenty.
+        You can skip anything
+        that doesn't apply.
+      </p>
+
+      <!-- CONTACT -->
+
+      <label for="customer-name">
+        Your name
+      </label>
+
+      <input
+        id="customer-name"
+        name="Customer Name"
+        type="text"
+        autocomplete="name"
+        required
+        placeholder="Your name"
+      >
+
+      <label for="customer-email">
+        Your email
+      </label>
+
+      <input
+        id="customer-email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+        placeholder="you@example.com"
+      >
+
+      <!-- RECIPIENT -->
+
+      <label for="recipient">
+        Who are we making something for?
+      </label>
+
+      <textarea
+        id="recipient"
+        name="Who Is This For"
+        rows="3"
+        required
+        placeholder="My dad, my daughter, our whole family, a group of old friends..."
+      ></textarea>
+
+      <!-- OCCASION -->
+
+      <label for="occasion">
+        Is there a special occasion?
+      </label>
+
+      <input
+        id="occasion"
+        name="Occasion"
+        type="text"
+        placeholder="Birthday, Christmas, anniversary, or just because..."
+      >
+
+      <!-- PERSONALITY -->
+
+      <label for="personality">
+        What makes them unmistakably them?
+      </label>
+
+      <textarea
+        id="personality"
+        name="Personality and Quirks"
+        rows="4"
+        placeholder="Their personality, unusual habits, running jokes, strange obsessions..."
+      ></textarea>
+
+      <!-- INTERESTS -->
+
+      <label for="interests">
+        What do they love?
+      </label>
+
+      <textarea
+        id="interests"
+        name="Interests and Favorites"
+        rows="4"
+        placeholder="Hobbies, animals, foods, places, games, favorite things..."
+      ></textarea>
+
+      <!-- STORIES -->
+
+      <label for="stories">
+        Any stories, memories, or
+        inside jokes worth knowing?
+      </label>
+
+      <textarea
+        id="stories"
+        name="Stories and Inside Jokes"
+        rows="4"
+        placeholder="That one vacation, the family legend, the nickname nobody can explain..."
+      ></textarea>
+
+      <!-- PREFERENCE -->
+
+      <label for="creation">
+        Do you have a type of creation in mind?
+      </label>
+
+      <select id="creation" name="Creation Preference">
+        <option value="Surprise me">
+          Surprise me! You come up with it.
+        </option>
+        <option value="Custom Toy">Custom Toy</option>
+        <option value="Custom Game">Custom Game</option>
+        <option value="Puzzle">Puzzle</option>
+        <option value="Art">Art</option>
+        <option value="Something Else">Something Else</option>
+      </select>
+
+      <!-- BUDGET -->
+
+      <label for="budget">
+        What budget are you comfortable with?
+      </label>
+
+      <select id="budget" name="Budget">
+        <option value="">Select a range (optional)</option>
+        <option value="Under $50">Under $50</option>
+        <option value="$50-$100">$50–$100</option>
+        <option value="$100-$200">$100–$200</option>
+        <option value="$200-$400">$200–$400</option>
+        <option value="$400+">$400+</option>
+        <option value="Flexible">I'm flexible</option>
+      </select>
+
+      <!-- DEADLINE -->
+
+      <label for="deadline">
+        When would you need it?
+      </label>
+
+      <input
+        id="deadline"
+        name="Desired Date"
+        type="date"
+      >
+
+      <!-- OTHER -->
+
+      <label for="other">
+        Anything else I should know?
+      </label>
+
+      <textarea
+        id="other"
+        name="Other Details"
+        rows="3"
+        placeholder="Anything at all. Strange details encouraged."
+      ></textarea>
+
+      <!-- SUBMIT -->
+
+      <button class="button" type="submit">
+        Send My Peculiar Details →
+      </button>
+
+      <p class="small-note">
+        This is a creative inquiry, not a purchase.
+        I'll review your answers and get in touch
+        about ideas, possibilities, and pricing.
+        No payment is required to submit.
+      </p>
+
+    </form>
+
+  </section>
+
+</main>
+
+<footer class="wrap">
+  Safari Sean Creative
+</footer>
+
 </body>
 </html>
