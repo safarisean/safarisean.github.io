@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,22 +44,21 @@
       text-decoration: none;
       cursor: pointer;
     }
-    :focus-visible { outline: 3px solid #2d2929; outline-offset: 4px; }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+    :focus-visible {
+      outline: 3px solid #2d2929;
+      outline-offset: 4px;
     }
-    .card {
-      min-height: 150px;
-      border: 2px solid #2d2929;
-      border-radius: 10px;
-      padding: 20px;
-      background: #c8db16;
+
+    /* Illustrated example cards */
+    .example-cards-image {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 24px auto 0;
+      border-radius: 12px;
     }
-    .card:nth-child(2) { background: #80d6ce; }
-    .card:nth-child(3) { background: #ff9c87; }
-    .card h3 { margin: 12px 0 0; font: 1.5rem/1.15 Georgia, serif; }
+
     #questionnaire { padding-block: 38px 60px; }
     form, #result { max-width: 650px; }
     label { display: block; margin-top: 20px; font-weight: 700; }
@@ -77,10 +77,6 @@
     form .button, #copy { margin-top: 18px; }
     #result { margin-top: 24px; }
     footer { padding-bottom: 32px; font-size: .85rem; }
-    @media (max-width: 620px) {
-      .cards { grid-template-columns: 1fr; }
-      .card { min-height: 0; }
-    }
   </style>
 </head>
 <body>
@@ -103,20 +99,13 @@
 
     <section aria-labelledby="examples-title">
       <h2 id="examples-title">A few cards that could be in your deck</h2>
-      <div class="cards">
-        <article class="card">
-          <span class="label">Hometown favorite</span>
-          <h3>The Good Gas Station Pizza</h3>
-        </article>
-        <article class="card">
-          <span class="label">Pet peeve</span>
-          <h3>People Who Clap When the Plane Lands</h3>
-        </article>
-        <article class="card">
-          <span class="label">Campus lore</span>
-          <h3>Your College’s Most Overrated Tradition</h3>
-        </article>
-      </div>
+
+      <img
+        class="example-cards-image"
+        src="images/custom-pecking-cards.jpg"
+        alt="Three custom Pecking Order cards featuring Gas Station Pizza, Howard's Rock, and People Unaware of Talking Too Loud"
+        loading="lazy"
+      >
     </section>
 
     <section id="questionnaire">
