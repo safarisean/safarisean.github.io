@@ -5,16 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="description"
+    content="Safari Sean Creative is a small creative studio making original books, games, toys, art, and personalized creations. You bring the people. I'll bring the ideas.">
+
   <title>Safari Sean Creative</title>
 
   <style>
     :root {
       --cream: #fff6df;
+      --paper: #fffbef;
       --charcoal: #2d2929;
       --soft: #716964;
       --lime: #c8db16;
       --blue: #37c7c2;
       --coral: #ff6b55;
+      --navy: #123653;
     }
 
     * {
@@ -30,74 +35,140 @@
       background: var(--cream);
       color: var(--charcoal);
       font-family: Arial, sans-serif;
+      line-height: 1.6;
     }
 
+    a {
+      color: inherit;
+      text-underline-offset: 4px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(calc(100% - 40px), 1100px);
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+
     header {
-      max-width: 1100px;
-      margin: auto;
-      padding: 28px 24px;
+      padding-block: 26px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .name {
       font-weight: 800;
       letter-spacing: .08em;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 25px;
     }
 
     nav a {
-      margin-left: 24px;
-      color: var(--charcoal);
       text-decoration: none;
-      font-size: 14px;
+      font-size: .9rem;
+      font-weight: 600;
     }
 
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* HERO */
+
     .hero {
-      min-height: 75vh;
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 24px 100px;
+      min-height: 72vh;
+      padding-block: 60px 100px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.15fr 1fr;
       align-items: center;
       gap: 50px;
     }
 
     .hero-copy {
-      max-width: 590px;
+      max-width: 630px;
     }
 
     .eyebrow {
       color: var(--coral);
-      font-weight: bold;
+      font-weight: 800;
       letter-spacing: .14em;
       text-transform: uppercase;
-      font-size: 13px;
+      font-size: .8rem;
     }
 
     h1 {
-      margin: 18px 0;
-      font-size: clamp(52px, 8vw, 92px);
-      line-height: .95;
+      margin: 18px 0 26px;
+      font-size: clamp(3.2rem, 7vw, 6rem);
+      line-height: .97;
       letter-spacing: -.06em;
     }
 
     .intro {
-      max-width: 500px;
+      max-width: 520px;
       color: var(--soft);
-      font-size: 21px;
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
       line-height: 1.6;
     }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border: 2px solid var(--charcoal);
+      border-radius: 6px;
+      background: var(--lime);
+      color: var(--charcoal);
+      font-weight: 800;
+      text-decoration: none;
+      text-align: center;
+      transition: background .2s ease;
+    }
+
+    .button:hover {
+      background: #b6ca0c;
+    }
+
+    .button-outline {
+      background: transparent;
+    }
+
+    .button-outline:hover {
+      background: var(--paper);
+    }
+
+    /* LOGO */
 
     .logo-area {
       position: relative;
       display: grid;
       place-items: center;
+      min-height: 340px;
     }
 
     .logo-area img {
+      display: block;
       width: min(100%, 440px);
+      height: auto;
       position: relative;
       z-index: 2;
     }
@@ -124,27 +195,141 @@
       left: 3%;
     }
 
+    /* MADE FOR YOU */
+
+    .made-for-you {
+      background: #e8ecad;
+      padding: 100px 0;
+      border-top: 1px solid var(--charcoal);
+      border-bottom: 1px solid var(--charcoal);
+    }
+
+    .section-label {
+      display: block;
+      margin-bottom: 18px;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .made-for-you h2 {
+      max-width: 850px;
+      margin: 0 0 30px;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.03;
+      letter-spacing: -.06em;
+    }
+
+    .made-for-you p {
+      max-width: 660px;
+      margin: 0 0 20px;
+      color: #403e32;
+      font-size: 1.15rem;
+    }
+
+    .made-for-you strong {
+      color: var(--charcoal);
+    }
+
+    .made-for-you .button {
+      margin-top: 20px;
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    .made-for-you .button:hover {
+      background: var(--navy);
+    }
+
+    /* CREATIVE POSSIBILITIES */
+
+    .possibilities {
+      padding: 90px 0 100px;
+    }
+
+    .possibilities h2 {
+      margin: 0 0 20px;
+      font: 400 clamp(2.4rem, 5vw, 3.8rem)/1.12 Georgia, serif;
+    }
+
+    .possibilities-intro {
+      max-width: 650px;
+      margin: 0 0 35px;
+      color: var(--soft);
+      font-size: 1.1rem;
+    }
+
+    .possibility-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .possibility {
+      min-height: 175px;
+      padding: 24px 16px;
+      border: 1px solid var(--charcoal);
+      border-radius: 12px;
+      background: var(--paper);
+    }
+
+    .possibility-symbol {
+      display: block;
+      margin-bottom: 20px;
+      color: var(--navy);
+      font: 2.2rem Georgia, serif;
+    }
+
+    .possibility h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.3;
+    }
+
+    .possibility:nth-child(2) {
+      background: #e8ecad;
+    }
+
+    .possibility:nth-child(3) {
+      background: #c8ece7;
+    }
+
+    .possibility:nth-child(4) {
+      background: #fce2d5;
+    }
+
+    .possibility:nth-child(5) {
+      background: #f3dcef;
+    }
+
+    /* ORIGINAL CREATIONS */
+
     .work {
       background: var(--charcoal);
       color: var(--cream);
-      padding: 100px 24px;
-    }
-
-    .work-inner {
-      max-width: 1000px;
-      margin: auto;
+      padding: 100px 0;
     }
 
     .work h2 {
-      font-size: clamp(42px, 7vw, 72px);
+      font-size: clamp(2.8rem, 7vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin: 0 0 22px;
+    }
+
+    .work-intro {
+      max-width: 650px;
       margin: 0 0 50px;
+      color: #ded5c8;
+      font-size: 1.15rem;
     }
 
     .category {
-      padding: 32px 0;
+      padding: 35px 0;
       border-top: 2px solid rgba(255,255,255,.25);
       display: grid;
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 230px 1fr;
       gap: 30px;
     }
 
@@ -155,164 +340,438 @@
     .category h3 {
       margin: 0;
       color: var(--lime);
-      font-size: 26px;
+      font-size: 1.7rem;
+      line-height: 1.2;
+    }
+
+    .category h3 a {
+      text-decoration: none;
+    }
+
+    .category h3 a:hover {
+      text-decoration: underline;
     }
 
     .category p {
       margin: 0;
-      max-width: 620px;
+      max-width: 660px;
       color: #ded5c8;
-      font-size: 19px;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      line-height: 1.65;
     }
 
+    /* CLOSING */
+
+    .closing {
+      padding: 105px 0;
+      text-align: center;
+    }
+
+    .closing h2 {
+      max-width: 750px;
+      margin: 0 auto 24px;
+      font-size: clamp(2.7rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      letter-spacing: -.05em;
+    }
+
+    .closing p {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      color: var(--soft);
+      font-size: 1.15rem;
+    }
+
+    /* FOOTER */
+
     footer {
-      padding: 70px 24px;
+      padding: 45px 24px;
+      border-top: 1px solid #2d292933;
       text-align: center;
     }
 
     footer strong {
       display: block;
-      font-size: 26px;
-      margin-bottom: 10px;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
     }
 
     footer p {
+      margin: 0;
       color: var(--soft);
+      font-size: .9rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .possibility-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     @media (max-width: 750px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       nav {
-        display: none;
+        gap: 18px;
       }
 
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 10px;
         padding-top: 30px;
+        padding-bottom: 70px;
+      }
+
+      .hero-copy {
+        margin: auto;
       }
 
       .intro {
-        margin: auto;
+        margin-inline: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
       }
 
       .logo-area {
         grid-row: 1;
+        min-height: 280px;
       }
 
       .logo-area img {
-        width: 280px;
+        width: min(100%, 280px);
       }
 
       .category {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .possibility-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .possibility {
+        min-height: 140px;
+      }
+
+      .made-for-you,
+      .possibilities,
+      .work {
+        padding-block: 70px;
+      }
+
+      .hero-actions .button {
+        width: 100%;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="name">SAFARI SEAN CREATIVE</div>
 
-    <nav>
+  <!-- HEADER -->
+
+  <header class="wrap">
+
+    <a class="name" href="index.html">
+      SAFARI SEAN CREATIVE
+    </a>
+
+    <nav aria-label="Main navigation">
       <a href="books.html">Books</a>
       <a href="games.html">Games</a>
-      <a href="#work">Made for You</a>
+      <a href="made-for-you.html">Made for You</a>
     </nav>
+
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow">A small creative studio</div>
 
-        <h1>Playful inventions for curious people.</h1>
+    <!-- HERO -->
+
+    <section class="hero wrap">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          A Small Creative Studio
+        </div>
+
+        <h1>
+          Playful inventions for curious people.
+        </h1>
 
         <p class="intro">
-          Books, games and unusual little things made with care,
-          curiosity and a healthy respect for nonsense.
+          Books, games, unusual little things,
+          and one-of-a-kind creations
+          made with care, curiosity,
+          and a healthy respect for nonsense.
         </p>
+
+        <div class="hero-actions">
+
+          <a class="button" href="made-for-you.html">
+            Make Something Personal →
+          </a>
+
+          <a class="button button-outline" href="#creations">
+            Explore the Workshop
+          </a>
+
+        </div>
+
       </div>
 
       <div class="logo-area">
-        <span class="dot dot-one"></span>
-        <img src="ssc-logo.png" alt="Safari Sean Creative emblem">
-        <span class="dot dot-two"></span>
+
+        <span class="dot dot-one"
+          aria-hidden="true"></span>
+
+        <img
+          src="ssc-logo.png"
+          alt="Safari Sean Creative emblem"
+        >
+
+        <span class="dot dot-two"
+          aria-hidden="true"></span>
+
       </div>
+
     </section>
 
-    <section class="work" id="work">
-      <div class="work-inner">
-        <h2>Things we make.</h2>
+    <!-- MADE FOR YOU -->
+
+    <section class="made-for-you"
+      id="made-for-you">
+
+      <div class="wrap">
+
+        <span class="section-label">
+          Made for You
+        </span>
+
+        <h2>
+          You bring the people.
+          I'll bring the ideas.
+        </h2>
+
+        <p>
+          Every family has its own stories,
+          strange traditions, inside jokes,
+          and wonderfully peculiar people.
+        </p>
+
+        <p>
+          You don't need to know what to
+          make with any of that.
+        </p>
+
+        <p>
+          <strong>That's what I'm here for.</strong>
+        </p>
+
+        <p>
+          Tell me a little about your people,
+          and I'll dream up something
+          worth making.
+        </p>
+
+        <a class="button"
+          href="made-for-you.html">
+          Tell Me About Your People →
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- POSSIBILITIES -->
+
+    <section class="possibilities wrap">
+
+      <span class="section-label">
+        The Possibilities
+      </span>
+
+      <h2>
+        A few things we could make.
+      </h2>
+
+      <p class="possibilities-intro">
+        These aren't boxes you have to
+        choose from. Just a few places
+        my imagination likes to wander.
+      </p>
+
+      <div class="possibility-grid">
+
+        <div class="possibility">
+          <span class="possibility-symbol"
+            aria-hidden="true">✳</span>
+          <h3>Custom Toys</h3>
+        </div>
+
+        <div class="possibility">
+          <span class="possibility-symbol"
+            aria-hidden="true">↕</span>
+          <h3>Custom Games</h3>
+        </div>
+
+        <div class="possibility">
+          <span class="possibility-symbol"
+            aria-hidden="true">◇</span>
+          <h3>Puzzles</h3>
+        </div>
+
+        <div class="possibility">
+          <span class="possibility-symbol"
+            aria-hidden="true">✦</span>
+          <h3>Art</h3>
+        </div>
+
+        <div class="possibility">
+          <span class="possibility-symbol"
+            aria-hidden="true">?</span>
+          <h3>Strange Ideas Welcome</h3>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ORIGINAL CREATIONS -->
+
+    <section class="work" id="creations">
+
+      <div class="wrap">
+
+        <span class="section-label">
+          From the Workshop
+        </span>
+
+        <h2>
+          Things I've made.
+        </h2>
+
+        <p class="work-intro">
+          Some started as a question.
+          Others started as a joke.
+          A few probably should have
+          remained jokes, but here we are.
+        </p>
 
         <!-- BOOKS -->
+
         <div class="category">
+
           <h3>
-            <a href="books.html"
-               style="color:inherit; text-decoration:none;">
+            <a href="books.html">
               Books
             </a>
           </h3>
 
           <p>
-            Picture books, peculiar poems and educational adventures
-            that wander slightly off the approved path.
+            Picture books, peculiar poems,
+            and educational adventures
+            that wander slightly off
+            the approved path.
           </p>
+
         </div>
 
         <!-- GAMES -->
+
         <div class="category">
+
           <h3>
-            <a href="games.html"
-               style="color:inherit; text-decoration:none;">
+            <a href="games.html">
               Games
             </a>
           </h3>
 
           <p>
-            Card games, family games and playful experiments designed
-            to get people laughing around the same table.
+            Card games, family games,
+            and playful experiments
+            designed to get people
+            laughing around the same table.
           </p>
+
         </div>
 
-        <!-- MADE FOR YOU -->
+        <!-- COLLABORATIONS -->
+
         <div class="category">
+
           <h3>
-            <a href="made-for-you.html"
-               style="color:inherit; text-decoration:none;">
-              Made for You
-            </a>
+            Collaborations
           </h3>
 
           <p>
-            Custom cards, family worlds and one-of-a-kind creative
-            keepsakes built from the people and stories you love.
+            Good things happen when creative
+            people put their heads together.
+            Sometimes it's a game.
+            Sometimes it's a book.
+            Sometimes it's an idea
+            that started as a ridiculous
+            conversation and somehow
+            became a real thing.
           </p>
-        </div>
 
-        <!-- COLLABORATION WITH FRIENDS -->
-        <div class="category">
-          <h3>Collaboration with Friends</h3>
-
-          <p>
-            Good things happen when creative people put their heads
-            together. Sometimes it's a game. Sometimes it's a book.
-            Sometimes it's an idea that started as a ridiculous
-            conversation and somehow became a real thing.
-            A collection of things I've had the pleasure of
-            making with friends.
-          </p>
         </div>
 
       </div>
+
     </section>
+
+    <!-- CLOSING -->
+
+    <section class="closing wrap">
+
+      <span class="section-label">
+        Your Turn
+      </span>
+
+      <h2>
+        Somebody you know
+        deserves something peculiar.
+      </h2>
+
+      <p>
+        You don't have to know what it is.
+        Just tell me about them.
+        I'll take it from there.
+      </p>
+
+      <a class="button" href="made-for-you.html">
+        Let's Make Something →
+      </a>
+
+    </section>
+
   </main>
 
+  <!-- FOOTER -->
+
   <footer>
+
     <strong>Safari Sean Creative</strong>
-    <p>More peculiar things are currently being assembled.</p>
+
+    <p>
+      More peculiar things
+      are currently being assembled.
+    </p>
+
   </footer>
+
 </body>
 </html>
