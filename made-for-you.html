@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Custom games, puzzles and imaginary worlds inspired by your family, friends and favorite little things.">
   <title>Made for You — Safari Sean Creative</title>
   <style>
     * { box-sizing: border-box; }
@@ -11,84 +12,178 @@
       margin: 0;
       background: #fff6df;
       color: #2d2929;
-      font-family: Arial, sans-serif;
+      font: 1rem/1.6 Arial, sans-serif;
     }
 
     a { color: inherit; text-underline-offset: 4px; }
-    a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
-
-    .wrap {
-      width: min(calc(100% - 48px), 1000px);
-      margin-inline: auto;
-    }
+    a:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
+    .wrap { width: min(calc(100% - 40px), 1000px); margin-inline: auto; }
 
     header {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 12px 24px;
-      padding-block: 28px;
-      font-size: 14px;
+      gap: 10px 24px;
+      padding-block: 24px;
+      font-size: .875rem;
     }
 
     .brand, .label {
+      font-size: .75rem;
       font-weight: 800;
-      letter-spacing: .1em;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
     .brand { text-decoration: none; }
-    .label { font-size: 12px; text-transform: uppercase; }
-    main { padding-block: clamp(44px, 10vw, 100px) 52px; }
+    .intro { padding-block: clamp(48px, 10vw, 100px) 48px; }
 
     h1 {
       max-width: 14ch;
-      margin: 16px 0 22px;
-      font-size: clamp(40px, 9vw, 90px);
+      margin: 12px 0 22px;
+      font-size: clamp(2.7rem, 8vw, 5.5rem);
       line-height: 1;
       letter-spacing: -.06em;
     }
 
-    p {
-      max-width: 55ch;
-      color: #665e57;
-      font-size: 18px;
-      line-height: 1.65;
+    p { margin: 0; max-width: 58ch; color: #665e57; }
+    .intro p { font-size: 1.2rem; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
     }
 
-    footer { padding-bottom: 32px; font-size: 13px; }
+    .project {
+      padding: clamp(20px, 4vw, 34px);
+      border: 1px solid #2d29294d;
+      border-radius: 12px;
+      background: #fffbef;
+    }
+
+    .featured {
+      grid-column: 1 / -1;
+      background: #e8ecad;
+      border-color: #2d2929;
+    }
+
+    .mark {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 12px;
+      border: 1px solid #2d2929;
+      border-radius: 50%;
+      background: #80d6ce;
+      font: 1.25rem Georgia, serif;
+    }
+
+    .puzzle .mark, .other .mark { background: #ff9c87; }
+    .featured .mark { background: #c8db16; }
+
+    h2 {
+      margin: 0 0 10px;
+      font: 400 clamp(1.65rem, 4vw, 2.4rem)/1.1 Georgia, serif;
+    }
+
+    .featured h2 { margin-top: 8px; }
+
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 16px;
+      border-radius: 5px;
+      background: #2d2929;
+      color: #fff6df;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button:hover { text-decoration: underline; }
+    footer { padding-block: 42px 30px; font-size: .85rem; }
+
+    @media (max-width: 620px) {
+      .projects { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <header class="wrap">
-    <a class="brand" href="index.html">SAFARI SEAN CREATIVE</a>
+    <a class="brand" href="index.html">Safari Sean Creative</a>
     <a href="index.html">← Back home</a>
   </header>
 
   <main class="wrap">
-    <span class="label">Made for You</span>
-    <h1>Grown-ups don’t get enough recess.</h1>
+    <section class="intro">
+      <span class="label">Made for You</span>
+      <h1>Your people. Your peculiar little world.</h1>
+      <p>
+        Tell me what your people love, what they laugh about, and what
+        they bring up at every Thanksgiving. I’ll turn those little
+        details into games, puzzles and worlds that could only belong to you.
+        The dog’s ridiculous nickname is absolutely relevant.
+      </p>
+    </section>
 
-    <p>
-      When we were kids, somebody rang a bell and sent us outside to play.
-      Now the only thing that rings is the dryer.
-    </p>
+    <section class="projects" aria-label="Custom creations">
+      <article class="project featured">
+        <span class="mark" aria-hidden="true">↕</span>
+        <div class="label">Featured customization</div>
+        <h2>Ranking Game</h2>
+        <p>
+          <strong>The Pecking Order: Your Edition.</strong>
+          Put hometown favorites, family pet peeves and highly debatable
+          snacks on cards. Then find out who’s willing to defend the gas
+          station pizza in front of the entire family.
+        </p>
+        <a class="button" href="custom-pecking-order.html">
+          See example cards &amp; start your deck →
+        </a>
+      </article>
 
-    <p>
-      I think grown-ups have a play deficit. I don’t mean we need another
-      hobby to get good at. I mean we could use more time around a table,
-      laughing with people we like, doing something that doesn’t need to be useful.
-    </p>
+      <article class="project">
+        <span class="mark" aria-hidden="true">Ⅱ</span>
+        <h2>Matching Game</h2>
+        <p>
+          Flip over a card. There’s the family dog. Flip another.
+          There’s the family dog again. Give your favorite people, places
+          and wonderfully specific objects a pair of their own.
+        </p>
+      </article>
 
-    <p>
-      So I make games out of the stuff only your people would get: the dog
-      with four nicknames, the creek behind Grandma’s house, the gas station
-      everybody insists has the best pizza.
-    </p>
+      <article class="project puzzle">
+        <span class="mark" aria-hidden="true">◇</span>
+        <h2>Custom Puzzles</h2>
+        <p>
+          Grandma’s kitchen, the old family cabin or a map of your
+          neighborhood as you remember it. Pick a scene worth spending
+          an afternoon with. I’ll make it a puzzle.
+        </p>
+      </article>
 
-    <p>
-      Because sometimes the best way to get grown-ups to play is to put
-      that gas station on a card and make them defend it.
-    </p>
+      <article class="project">
+        <span class="mark" aria-hidden="true">✦</span>
+        <h2>For the More Serious Gamers</h2>
+        <p>
+          For the group that reads the rulebook before game night:
+          imagine custom characters, locations and scenarios built around
+          your people. The creek behind Grandma’s house might need a
+          bridge inspector. The bridge inspector might be a troll.
+        </p>
+      </article>
+
+      <article class="project other">
+        <span class="mark" aria-hidden="true">+</span>
+        <h2>Other Creations</h2>
+        <p>
+          Maybe it’s a tiny field guide to your family’s sayings.
+          Maybe it’s an illustrated map of a place only the cousins know.
+          It doesn’t have to fit in a game box.
+        </p>
+      </article>
+    </section>
   </main>
 
   <footer class="wrap">Safari Sean Creative</footer>
